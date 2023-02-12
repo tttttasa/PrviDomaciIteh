@@ -36,7 +36,7 @@ class Termin{
         return $conn->query($query);
     }
 
-    public static function add( $trener,$lokacija, $datum, mysqli $conn){
+    public static function add( $trener, $lokacija, $datum, mysqli $conn){
         $query = "INSERT INTO termin(trener,lokacija,datum) VALUES('$trener','$lokacija','$datum')";
         return $conn->query($query);
     }
@@ -48,7 +48,7 @@ class Termin{
 
     public static function getLast(mysqli $conn)
     {
-        $q = "SELECT * FROM termin ORDER BY id DESC LIMIT 1";
+        $q = "SELECT id FROM termin ORDER BY id DESC LIMIT 1";
         return $conn->query($q);
     }
 }
